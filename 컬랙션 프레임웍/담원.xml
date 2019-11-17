@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
@@ -8,3 +9,15 @@
 <entry key="뉴클리어">원딜</entry>
 <entry key="너구리">탑</entry>
 </properties>
+=======
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>담원 게이밍</comment>
+<entry key="펀치">정글</entry>
+<entry key="beryl">support</entry>
+<entry key="쇼메이커">미드</entry>
+<entry key="뉴클리어">원딜</entry>
+<entry key="너구리">탑</entry>
+</properties>
+>>>>>>> parent of f46b05c... Revert "자바 공부한 것-2(javaで勉強した事　その2） "
