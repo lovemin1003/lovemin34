@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #\uB2F4\uC6D0 \uAC8C\uC774\uBC0D,damwon gaming
 #Thu Oct 03 20:57:59 KST 2019
 \uD380\uCE58=\uC815\uAE00
@@ -6,12 +5,3 @@ beryl=support
 \uC1FC\uBA54\uC774\uCEE4=\uBBF8\uB4DC
 \uB274\uD074\uB9AC\uC5B4=\uC6D0\uB51C
 \uB108\uAD6C\uB9AC=\uD0D1
-=======
-#\uB2F4\uC6D0 \uAC8C\uC774\uBC0D,damwon gaming
-#Thu Oct 03 20:57:59 KST 2019
-\uD380\uCE58=\uC815\uAE00
-beryl=support
-\uC1FC\uBA54\uC774\uCEE4=\uBBF8\uB4DC
-\uB274\uD074\uB9AC\uC5B4=\uC6D0\uB51C
-\uB108\uAD6C\uB9AC=\uD0D1
->>>>>>> parent of f46b05c... Revert "자바 공부한 것-2(javaで勉強した事　その2） "
