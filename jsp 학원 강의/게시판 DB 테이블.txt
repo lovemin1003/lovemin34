@@ -1,0 +1,12 @@
+CREATE TABLE board (
+  seq NUMBER NOT NULL, -- 글번호
+  id  VARCHAR2(30) NOT NULL,    -- 글쓴이 id
+  name VARCHAR2(30) NOT NULL,   -- 글쓴이 닉넴
+  title VARCHAR2(255) NOT NULL, -- 글제목
+  content VARCHAR2(4000) NOT NULL, -- 글본문
+  filename varchar2(255),
+  hit NUMBER DEFAULT 0,  -- 조회수
+  logtime DATE DEFAULT SYSDATE -- 작성시간
+); 
+
+CREATE SEQUENCE board_seq;

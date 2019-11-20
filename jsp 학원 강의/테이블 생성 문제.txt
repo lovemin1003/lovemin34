@@ -1,0 +1,36 @@
+다음의 조건에 부합하는 테이블을 구현하세요
+테이블명 : testmember
+
+항목 : 
+번호(no) - 숫자 형태
+이름(name) - 가변 문자열 최대 한글 10글자
+아이디(id) - 가변 문자열 최대 영문 20글자
+비밀번호(pw) - 가변 문자열 최대 영문 20글자
+마일리지(money) - 숫자 형태
+가입일(joindate) - 날짜 형태
+
+create table testmember(
+no number,
+name varchar2(30),
+id varchar2(20),
+pw varchar2(20),
+money number,
+joindate date
+);
+
+번호를 부여할 수 있는 시퀀스를 생성하세요(testmember_seq)
+ -> 캐시 사이즈 0, 시작번호 1, 증가 간격 1로 설정
+
+create sequence testmember_seq nocache;
+
+위의 형식에 맞게 테이블 생성 후 메모장 파일의 데이터 시트를 추가하세요
+
+가변문자열(varchar2) 항목을 간격조절 하신다음 목록까지 출력하시면 완성
+
+간격조절방법 : col 항목명 for 크기;   (크기는 a10, a5 와 같이 지정)
+예를들어 name 항목의 크기를 조절하고 싶으면 col name for a10;
+
+
+
+
+

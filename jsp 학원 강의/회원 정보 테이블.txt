@@ -1,0 +1,18 @@
+CREATE TABLE member (
+	no NUMBER,
+	id VARCHAR2(20) NOT NULL UNIQUE,
+	password VARCHAR2(20) NOT NULL,
+	name VARCHAR2(20) NOT NULL UNIQUE,
+	email VARCHAR2(30) NOT NULL UNIQUE,
+	tel1 VARCHAR2(4),
+	tel2 VARCHAR2(4),
+	tel3 VARCHAR2(4)
+);
+
+CREATE SEQUENCE member_seq nocache;
+
+INSERT INTO member VALUES(member_seq.NEXTVAL, 'admin','admin123', '包府磊','admin@test.com', '010','0000','0000');
+INSERT INTO member VALUES(member_seq.NEXTVAL, 'test01','test01123', '蜡历1','test01@test.com', '010','0000','1111');
+INSERT INTO member VALUES(member_seq.NEXTVAL, 'test02','test02123', '蜡历2','test02@test.com', '010','0000','2222');
+INSERT INTO member VALUES(member_seq.NEXTVAL, 'test03','test03123', '蜡历3','test03@test.com', '010','0000','3333');
+INSERT INTO member VALUES(member_seq.NEXTVAL, 'test04','test04123', '蜡历4','test04@test.com', '010','0000','4444');

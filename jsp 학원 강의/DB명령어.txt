@@ -1,0 +1,366 @@
+DataBase(DB)
+ - 데이터를 저장하고 관리하는 용도로 만들어진 공간
+ - Oracle , MySQL , MS-SQL Server , Maria DB..........
+ - SQL - Structured Query Language, 구조화 질의어
+  - DB를 관리하기 위한 목적으로 만들어진 프로그래밍 언어...
+  - SQL 표준이 존재하기 때문에 DB마다 크게 다르진 않다...
+  - 규칙이 존재하기 때문에 규칙성만 알면 쉽게 접근이 가능하다...
+
+---------------------------------------------------------------------------------------
+
+관리자 계정 접속
+ - conn/as sysdba
+
+접속 계정 확인
+ - show user
+
+계정 접속
+ - conn 아이디/비밀번호
+ 	
+	conn system/oracle
+
+
+HTTP 리스너 포트 번호 확인
+ - select dbms_xdb.gethttpport() from dual;
+
+HTTP 리스너 포트 번호 변경
+ - exec dbms_xdb.sethttpport(포트번호);
+   exec dbms_xdb.sethttpport(9090);
+
+---------------------------------------------------------------------------------
+
+계정 생성
+ - 사용자들이 사용할 계정을 관리자가 만들어주어야 한다...
+
+ - create user 아이디 identified by 비밀번호;
+  - 아이디 : jsp  비밀번호 : jsp
+ 	create user jsp identified by jsp;
+
+
+ - 계정 권한 설정
+  - grant 권한1,권한2,권한3,..... to 아이디;
+
+   - connect - 연결 권한
+   - resource -  자원 접근 권한
+
+   - dba - 관리자 권한
+
+   grant connect,resource to jsp;
+
+
+ - 비밀번호 변경
+
+  alter user 아이디 identified by 변경할비밀번호;
+
+   alter user jsp identified by oracle;
+
+ - 계정 삭제
+  drop user 아이디;
+
+   drop user jsp;
+
+---------------------------------------------------------------------------------------
+
+테이블
+ - 데이터를 저장하기 위한 틀
+ - 일반적으로 표를 생각하면 된다....
+  - 분류 - 테이블 내에서는 속성이라고 불리며 하나하나를 컬럼 , 필드
+  - 밑의 데이터들 - 한줄이 하나의 데이터로 본다...(레코드)
+ - 각각의 사용자들 마다 따로 따로 관리가 된다....
+
+ - 데이터 베이스 내부에서도 데이터를 저장하기위해 최적화 된 데이터의 공간을
+   정의한 데이터타입(자료형)이 존재 한다....
+
+-------------------------------------------------------------------------------------
+
+Data Type(자료형)
+ - 숫자 - number
+  - number
+  - number(n)
+  - number(n,m)
+
+ - 문자(문자열포함) - 기본적으로 최대 4000byte
+  - char(n) - X - 고정
+  - varchar2(n) - 가변
+  - 영문자 1byte  한글 3byte
+
+ - 날짜
+  - date
+  - yy/mm/dd hh:mm:ss - 기본 형태
+
+-------------------------------------------------------------------------------------------
+
+테이블 생성
+ - create table 테이블명( 필드명 필드타입,필드명 필드타입...... );
+
+create table sample(
+num number,
+name varchar2(10),
+reg date
+);
+
+테이블 확인
+ - 계정 내에 있는 테이블 목록 확인
+  select * from tab;
+
+ - 테이블 상세확인
+  desc 테이블명;
+
+테이블 복사
+ - create table 테이블명 as select * from 복사할테이블명;
+
+테이블 수정
+ - 필드 추가
+   - alter table 테이블명 add(필드명 필드타입,필드명 필드타입....);
+ - 필드 데이터타입 변경
+   - alter table 테이블명 modify(필드명 필드타입,필드명 필드타입....);
+ - 필드 삭제
+   - alter table 테이블명 drop(필드명,필드명....);
+
+테이블 삭제
+ - drop table 테이블명;
+
+---------------------------------------------------------------------------------------------------------
+
+DML - 데이터 조작에 관련된 SQL
+ - 추가 - insert
+ - 수정 - update
+ - 삭제 - delete
+ - 검색 - select
+
+테이블 데이터 추가
+ - insert into 테이블명(필드명1,필드명2,필드명3.....) values(데이터1,데이터2,데이터3........);
+
+	insert into sample(num,name,reg) values(1,'김민준',to_date('2019-08-11'));
+	insert into sample values(2,'오대환','1979/01/01');
+	insert into sample(reg,num) values(sysdate,3);
+
+-------------------------------------------------------------------------------------------------
+
+트랜젝션
+ - 데이터 보호를 위해서 백업을 하나 두고 작업할때 제대로 확인하고 확인시 저장할수 있는 방법...
+
+ - 작업 저장 - commit;
+ - 작업 되돌리기 - rollback;
+
+----------------------------------------------------------------------------------------------------------------
+
+시퀀스
+ - 어떤 중복되지 않는 번호를 붙일때 사용하는 객체...
+ - 어떤 데이터 든 간에 데이터를 대표하는 항목이 존재해야 한다...
+
+
+생성
+ - create sequence 시퀀스명 옵션1,옵션2,옵션3....;
+
+  create sequence test_seq;
+
+
+시퀀스 확인
+ - select * from user_sequences;
+
+ - 옵션
+	start with 값 - 시작값
+	minvalue 최소값
+	maxvalue 최대값
+	increment by 값 - 변화값
+	cycle / nocycle
+	cache / nocache
+
+
+ - 캐쉬를 주지 않고 시작값을 1부터 최대 100까지 변화는 1씩
+
+ - create sequence sample_seq nocache start with 1 maxvalue 100 increment by 1;
+ - create sequence sample_seq nocache maxvalue 100;
+
+
+시퀀스 값 추출
+
+ - 시퀀스명.nextval
+
+insert into sample(num,name,reg) values(sample_seq.nextval,'김민준',to_date('2019-08-11'));
+insert into sample values(sample_seq.nextval,'오대환','1979/01/01');
+insert into sample(reg,num) values(sysdate,sample_seq.nextval);
+
+
+시퀀스 삭제
+
+ - drop sequence 시퀀스명;
+
+drop sequence test_seq;
+
+--------------------------------------------------------------------------------------------
+
+where절(조건절) - 어떠한 조건을 적는 문장...
+
+1.숫자
+ - <  >  <=  >=  =  != - 관계연산자
+ - and , or , not - 논리연산자
+
+ - 회원 번호가 10인 회원 검색
+	select * from testmember where no = 10;
+
+ - 회원 번호가 10이 아닌 회원 검색
+	select * from testmember where no != 10;
+	select * from testmember where no <> 10;
+	select * from testmember where no < 10 or no > 10;
+	select * from testmember where not no = 10;
+
+2.문자
+ - 일치 검색 = 
+   - 이름이 김민준인 회원 검색
+	select * from testmember where name = '김민준';
+ - 포함 검색 - like - where 필드명 like  '값';
+    - 값%  %값  %값%
+
+   - select * from testmember where name like '김%';
+   - select * from testmember where name like '%김';
+3.날짜 = 숫자 + 날짜
+ - 15년도에 가입한 회원 검색
+
+	select * from testmember where joindate >= '15/01/01' and joindate <= '15/12/31';
+	select * from testmember where joindate like '15%';
+
+between and - 사이에 있는 것을 구하는 명령
+ - where 필드명 between 값 and 값;
+
+	select * from testmember where joindate between '15/01/01' and to_date('15/3/1') - 1;
+
+-------------------------------------------------------------------------------------------
+
+ NULL 검색
+ - where 필드명 is null/not null;
+
+	select * from testmember where pw is not null;
+
+ 정렬 - order by 필드명 정렬상태,필드명 정렬상태....;
+   - asc(오름차순) , desc(내림차순)
+ - 항상 제일 뒤에 적어야 한다..
+
+	select * from testmember order by money asc,name desc;
+	select * from testmember where pw is null order by money asc;
+---------------------------------------------------------------------------------------------
+
+oracle 내장 함수
+1.합 - sum(필드명)
+2.평균 - avg(필드명)
+3.최대 - max(필드명)
+4.최소 - min(필드명)
+5.개수 - count(필드명)
+
+select 함수명(필드명) from 테이블명;
+
+select avg(money) from testmember;
+
+select count(pw) from testmember;
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+데이터 검색
+
+ - select 필드명,필드명,필드명.... from 테이블명 where 조건식;
+
+
+데이터 수정
+ - update 테이블명 set 필드명=값,필드명=값,필드명=값.... where 조건식;
+
+	update testmember set money = money + 10000 where money < 1000;
+
+
+데이터 삭제
+ - delete 테이블명 where 조건식;
+
+	delete testmember where no = 1;
+
+========================================================================================
+
+테이블 제약 조건
+ - 내가 원하는 데이터를 유입 시키기위해 사용하는 조건
+1. not null - NULL 금지
+
+create table test2(
+no number not null,
+name varchar2(15) not null,
+gender varchar2(10) not null,
+money number
+);
+
+insert into test2 values(null, null, null, null);
+insert into test2 values(1, '홍길동', '남자', 100);
+
+2.unique - 중복금지
+
+create table test3(
+no number unique,
+name varchar2(15) not null,
+gender varchar2(10) not null,
+money number
+);
+
+create table test3(
+no number unique not null,
+name varchar2(15) not null,
+gender varchar2(10) not null,
+money number
+);
+
+insert into test3 values(null, '홍길동', '남자', 100);
+insert into test3 values(1, '홍길동', '남자', 100);
+
+3. check - 내가 원하는 조건의 데이터들을 넣기위한 조건
+create table test5(
+no number not null unique,
+name varchar2(15) not null,
+gender varchar2(10) check(gender in('남자','여자')),
+money number
+);
+
+insert into test5 values(1, '홍길동', '남자', 0);
+insert into test5 values(2, '김태희', '여자', 0);
+insert into test5 values(3, '둘리', '???', 0);
+insert into test5 values(4, '또치', null, 0);
+
+
+4.default - 기본값 설정...
+
+create table test6(
+no number primary key,
+name varchar2(15) not null,
+gender varchar2(10) check(gender in('남자','여자')),
+money number default 0
+);
+
+
+insert into test6 values(1, '장동건', '남자', 0);
+insert into test6 values(2, '김태희', '여자', 100);
+insert into test6 values(3, '원빈', '남자', null);
+insert into test6(no, name, gender) values(4, '둘리', '남자');
+
+5.primary key - 테이블의 대표항목
+ - not null + unique
+ - 테이블당 1개만 설정가능...
+
+create table test4(
+no number primary key,
+name varchar2(15) not null,
+gender varchar2(10) not null,
+money number
+);
+
+insert into test4 values(null, '강호동', '남자', null);
+insert into test4 values(1, '홍길동', '남자', 100);
+
+6. foreign key - 다른 테이블의 primary key키를 가져와서 사용 용도,,,,
+
+
+
+
+
+
+
+
+
+
