@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<ul>
+<li>1번</li>
+<li>2번</li>
+<li>3번</li>
+<li>4번</li>
+<li>5번</li>
+</ul>
+<script>
+var list=document.getElementsByTagName('ul')[0];
+var allItems=list.getElementsByTagName('li');
+
+for(var i = 0, length = allItems.length; i<length; i++)
+	{
+	alert(allItems[i].firstChild.data);
+	}
+
+</script>
+
+
+</body>
+</html>

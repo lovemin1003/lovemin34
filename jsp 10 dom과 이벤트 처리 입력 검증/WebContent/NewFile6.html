@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function addtext(t)
+{
+	if(document.createTextNode)
+		{
+		var node=document.createTextNode(t);
+		document.getElementById('target').appendChild(node);
+		
+		}
+	}
+</script>
+<div id="target" onclick="addtext('역시 t1')">젠지를 역전승하는</div> 
+</body>
+</html>

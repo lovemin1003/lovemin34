@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function checkselection(elem, msg)
+{
+     if(elem.value==0)
+    	 {
+    	 alert(msg);
+    	 elem.focus();
+    	 return false;
+    	 
+    	 }
+     else
+    	 {
+    	 
+    	 return true;
+    	 }
+}
+</script>
+<form>
+밴드 선택<select id="band" class="required">
+<option value="0">"선택하시오."</option>
+<option value="1">"poppin party"</option>
+<option value="2">"roserlia"</option>
+<option value="3">"raise a suiren"</option>
+
+
+</select>
+<input type="button" onclick="checkselection(document.getElementById('band'), '뱅드림 모르냐?(나도 많이는 모름.)')" value="선택">
+</form>
+
+</body>
+</html>

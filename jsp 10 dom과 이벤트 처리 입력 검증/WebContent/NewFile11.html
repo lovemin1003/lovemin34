@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function changecolor(c)
+{
+	document.getElementById("target").style.backgroundColor=c;
+	
+	}
+</script>
+</head>
+<body id = "target">
+
+<form method="POST">
+<input type="radio" name="c1" onclick="changecolor('blue')"> 파랑
+<input type="radio" name="c2" onclick="changecolor('violet')"> 보라
+</form>
+
+</body>
+</html>

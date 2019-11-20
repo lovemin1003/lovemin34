@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var w;
+function openWindow()
+{
+	w = window.open(' ',' ','width=200, height=100');
+	w.document.write("<p>엄마는 외계인.</p>");
+	w.moveTo(0,0);
+}
+	
+function moveWindow()
+{
+	w.moveBy(10,10);
+	w.focus();
+}
+</script>
+</head>
+<body>
+<input type="button" value="화면 생성" onclick="openWindow()" /><br>
+<input type="button" value="화면 이동" onclick="moveWindow()" />
+</body>
+</html>

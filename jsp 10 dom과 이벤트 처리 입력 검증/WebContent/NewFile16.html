@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function checknumeric(elem, msg)
+{
+   var exp=/^[0-9]+$/;
+   if(elem.value.match(exp))
+	   {
+	   return true;
+	   }
+   else
+	   {
+	   alert(msg);
+	   elem.focus();
+	   return false;
+	   }
+}
+</script>
+<form>
+전화번호:<input type='text' id = 'phone'>
+<input type="button" onclick="checknumeric(document.getElementById('phone'), '숫자만 적으삼.')" value="숫자만 입력하라능..." >
+</form>
+</body>
+</html>

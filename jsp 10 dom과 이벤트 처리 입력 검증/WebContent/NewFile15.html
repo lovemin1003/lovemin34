@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function checklength(elem, min, max)
+{
+	var s = elem.value;
+	if(s.length>= min && s.length<=max)
+		{
+		
+		return true;
+		}
+	else
+		{
+		alert(min+ "글자와"+max+"글자 사이로 입력하시오.");
+		elem.focus();
+		return false;
+		}
+}
+</script>
+<form>
+계정(6-10글자)<input type="text" id='name'>
+<input type='button' value="꾸욱" onclick="checklength(document.getElementById('name'),6,10)">
+</form>
+</body>
+</html>

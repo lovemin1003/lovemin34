@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function old()
+{
+	alert('복통, 비염 슈발!');
+	document.body.style.backgroundColor="gray";
+	}
+	function sub()
+	{
+		var x = document.getElementById("name");
+		x.value=x.value.toLowerCase();
+	}
+	function omi(elem)
+	{
+		elem.style.border="2px solid cyan";
+	}
+	function omo(elem)
+	{
+		elem.style.border="";
+	}
+	function obd(button)
+	{
+		
+		button.style.color="red";
+	}
+	function obu(button)
+	{
+		
+		button.style.color="gold";
+	}
+</script>
+</head>
+<body onload="old()">
+영단어:<input type="text" id="name" onchange="sub()">
+<div style=background-color:yellow width=100px; 
+onmouseover="omi(this)" onmouseout="omo(this)">
+마우스를 이 요소 위에 이동하세요.</div>
+<button onmousedown="obd(this)" onmouseup="obu(this)">구독(?)</button>
+
+</body>
+</html>
