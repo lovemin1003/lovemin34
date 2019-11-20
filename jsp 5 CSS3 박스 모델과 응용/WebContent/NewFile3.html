@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div
+{
+border: 30px solid transparent;
+width: 300px;
+height: 50px;
+-webkit-border-image: url(border.png) 30 30 round;
+-o-border-image: url(border.png) 30 30 round;
+border-image: url(border.png) 30 30 round;
+}
+#target1
+{
+width: 100px;
+height: 50px;
+background-color: yellow;
+}
+#target2
+{
+width: 100px;
+height: 50px;
+background-color: green;
+}
+pre
+{
+border:1px solid red;
+background-color: yellow;
+width: 100px;
+height: 100px;
+resize: both;
+overflow: auto;
+}
+</style>
+</head>
+<body>
+<div>경계 이미지가 그려진다.</div>
+
+<p id="target1">마카롱</p>
+<p id="target2">사브레</p>
+<pre>박스 크기를 조절해보라</pre>
+</body>
+</html>
