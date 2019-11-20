@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div
+{
+width: 100px;
+height: 100px;
+float: left;
+margin: 3px;
+background: blue;
+}
+.next
+{
+background: blue;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+$(document).ready(function(){
+	var modWidth=100; //요소의 너비
+	$("div").click(function(){
+		$(this).width(modWidth).addClass("next");
+		modWidth+=2;
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("input").focus(function(){ //포커스를 얻으면
+		$(this).css("background-color","yellow"); //배경을 흰색으로 바꾼다.
+	});
+	$("input").blur(function(){
+		$(this).css("background-color","white");
+	});
+});
+
+</script>
+</head>
+<body>
+계정:<input type="text">
+</body>
+</html>

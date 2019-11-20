@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+p
+{
+background-color:cyan;
+}
+.container
+{
+width: 100px;
+height: 100px;
+border: 1px dotted red;
+}
+</style>
+<SCRIPT>
+$(document).ready(function(){
+	$("#button1").click(function(){
+		$(".container").remove();
+	});
+	$("#button2").click(function(){
+		$(".container").empty();
+	});
+});
+</SCRIPT>
+
+</head>
+<body>
+<button id="button1">리무브</button>
+<button id="button2">엠티</button>
+<div class="container">
+<p class="hello">헬로</p>
+<p class="love">러브</p>
+</div>
+</body>
+</html>

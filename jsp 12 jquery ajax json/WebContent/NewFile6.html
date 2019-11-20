@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  $("#fadein").click(function(){
+		  $("#kumi").fadeIn("slow");
+	  });
+	  $("#fadeout").click(function(){
+		  $("#kumi").fadeOut("slow");
+	  });
+  });
+</script>
+</head>
+<body>
+<button id="fadein">페이드인</button>
+<button id="fadeout">페이드아웃</button>
+<img id="kumi" src="55775340_p0_master1200.jpg" style="display: none; position: relative;">
+</body>
+</html> 

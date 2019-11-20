@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+<button>누르시오.</button>
+<img id="box" src="55775340_p0_master1200.jpg" style="position: relative">
+<script>
+$(document).ready(function() { 
+	$("button").click(function() {
+		
+		$("#box").animate({left:'500px', opacity:'0.6', width:'300px'});
+    });
+});
+
+
+</script>
+</body>
+</html>

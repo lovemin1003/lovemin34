@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function getFromServer ()
+{
+var req;
+if(window.XMLHttpRequest)
+	{
+	req = new XMLHttpRequest();
+	}
+else {
+	req=new ActiveXObject("Microsoft.XMLHTTP");
+     }	
+req.onreadystatechange=function()
+     {
+	if(req.readyState == 4 && req.status == 200)
+		{
+		document.getElementById("target").innerHTML = req.responseText;
+		}
+     }
+     req.open("GET","NewFile11.html",true);
+     req.send();
+}
+</script>
+</head>
+<body>
+<div id="target" style="width:200px; height: 200px; border: 1px dotted black;"></div>
+<button type="button" onclick="getFromServer()">get data</button>
+</body>
+</html>

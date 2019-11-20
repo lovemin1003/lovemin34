@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#text").click(function(){
+		alert($("#target").text());
+	});
+	$("#html").click(function(){
+		alert($("#target").html());
+	});
+	$("#text1").click(function(){
+		$("#target").text("배틀시스터 사브레");
+	});
+	$("#html1").click(function(){
+		$("#target").html("<h1>배틀시스터 사브레<h1>");
+	});
+	
+	
+});
+
+</script>
+</head>
+<body>
+<p id="target">배틀시스터<strong> 마카롱</strong></p>
+<button id="text">text</button>
+<button id="html">html</button>
+<button id="text1">text1</button>
+<button id="html1">html1</button>
+</body>
+</html>

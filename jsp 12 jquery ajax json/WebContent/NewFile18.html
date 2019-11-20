@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>생선 명단</h1>
+<p style="background-color:blue;">
+이름:<span id="name"></span>&nbsp
+나이<span id="age"></span>
+</p>
+<script>
+var s='['+
+	'{"name":"sonata","age":"15"},'+
+	'{"name":"serena","age":"15"},'+
+	'{"name":"fina","age":"14"}]';
+	
+	//var fish = eval("("+s+")");
+	var fish = JSON.parse(s);
+	
+	fish[1].name="caro";
+	document.getElementById("name").innerHTML = fish[1].name;
+	document.getElementById("age").innerHTML = fish[1].age;
+</script>
+</body>
+</html>

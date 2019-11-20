@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+div{ width:60px; height:60px;}
+
+
+</style>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+<div id='div1' style="background-color: blue;"></div>
+<script>
+$(document).ready(function(){
+	$("#button1").click(function(){
+		var color = $("#div1").css("background-color");
+		$("#result").text("background-color: "+color);
+	});
+	$("#button2").click(function(){
+		$("#div1").css("background-color","violet");
+	});
+});
+</script>
+<button id="button1">1</button>
+<button id="button2">2</button>
+<p id="result">결과 표시</p>
+</body>
+</html>

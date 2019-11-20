@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body{background-color:"blue";}
+div{padding:20px;}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<script>
+
+$(document).mousemove(function(e){
+	$("#log").text("e.pageX:  "+e.pageX+" e.pageY:"+e.pageY);
+});
+
+</script>
+</body>
+</html>
