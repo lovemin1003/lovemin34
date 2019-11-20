@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var msg;
+
+var time= new Date().getHours();
+
+if (time<12)
+	{
+	msg="좋은 아침!";
+	
+	}
+else if(time<18)
+	{
+	msg="좋은 오후";
+	}
+else
+	{
+	
+	msg="뜨거운 밤";
+	}
+document.write(msg," 지금 시간:",time,"시");	
+
+
+</script>
+</body>
+</html>
