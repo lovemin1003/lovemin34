@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function readfile()
+{
+ if(!window.File || !window.FileReader)
+	 {
+	 alert('File API가 지원되지 않음.');
+	 return
+	 }
+ var files=document.getElementById('input').files;
+ if(!files.length)
+	 {
+	 alert('파일을 고르시오.');
+	 return;
+	 }
+ var file=files[0];
+ var reader = new FileReader();
+ reader.onload=function()
+ {
+	 document.getElementById('result').value=reader.result;
+ };
+ reader.readAsText(file,"utf-8"); // euc-kr
+}
+</script>
+</head>
+<body>
+<input type="file" id="input" name="input">
+<button id="readfile" onclick="readfile()">파일 읽기</button>
+<br>
+<textarea id="result" rows="9" cols="60"></textarea>
+
+
+
+</body>
+</html>

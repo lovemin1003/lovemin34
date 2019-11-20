@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p><button onclick="increcount()">누르시게.</button></p>
+<div id="target"></div>
+<script>
+function increcount()
+{
+  if(('sessionStorage' in window) && window['sessionStorage']!== null)
+	  {
+	    if(sessionStorage.count)
+	    	{
+	    	sessionStorage.count++;
+	    	}
+	    else
+	    	{
+	    	sessionStorage.count=1;
+	    	}
+	    document.getElementById("target").innerHTML=sessionStorage.count+"번 클릭함."
+	  }
+  else
+	  {
+	  document.getElementById("target").innerHTML="브라우저가 웹 스토리지를 지원하지 않음."
+	  }
+}
+</script>
+</body>
+</html>

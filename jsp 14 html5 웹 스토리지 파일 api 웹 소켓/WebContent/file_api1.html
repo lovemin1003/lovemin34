@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function readfile()
+{
+
+ var files=document.getElementById('input').files;
+ output="";
+for (var i=0, f; f=files[i]; i++)
+	{
+	output += f.name+"\n";
+	output += f.type+"\n";
+	output += f.size+"바이트\n";
+	output += f.lastModifiedDate+"\n";
+	}
+	 document.getElementById('result').value=output;
+
+}
+</script>
+</head>
+<body>
+<input type="file" id="input" name="input" >
+<button id="readfile" onclick="readfile()">파일 읽기</button>
+<br>
+<textarea id="result" rows="9" cols="60"></textarea>
+
+
+
+</body>
+</html>
