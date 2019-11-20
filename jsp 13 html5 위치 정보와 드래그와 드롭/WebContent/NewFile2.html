@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#cute
+{
+width: 500px;
+height: 500px;
+padding: 2px;
+border: 1px solid blue; 
+}
+</style>
+<script>
+function allowdrop(e)
+{
+e.preventDefault();
+}
+
+function handledragstart(e)
+{
+e.dataTransfer.effectAllowed='move';
+e.dataTransfer.setData("Text",e.target.id);//드래그에 id를 싣는다.
+}
+function handledrop(e)
+{
+e.preventDefault();
+var src = e.dataTransfer.getData("Text");
+e.target.appendChild(document.getElementById(src));
+}
+</script>
+</head>
+<body>
+<p>원하는 일러스트를 옮기시오.</p>
+<div id="cute" ondrop="handledrop(event)" ondragover="allowdrop(event)">
+</div>
+<br>
+<img id="kumi" src="53707668_p0_master1200.jpg" draggable="true" ondragstart="handledragstart(event)" width="150" height="180"></img>
+<img id="cat" src="C9k-2GIXcAELden.jpg" draggable="true" ondragstart="handledragstart(event)" width="250" height="180"></img>
+<img id="wiz" src="Cls2D0WUoAAeCGX-1.png" draggable="true" ondragstart="handledragstart(event)" width="150" height="180"></img>
+<img id="tirua" src="CARD-00003363.jpg" draggable="true" ondragstart="handledragstart(event)" width="150" height="180"></img>
+<img id="girl" src="Be6qIvaCAAE2NrC.jpg" draggable="true" ondragstart="handledragstart(event)" width="150" height="180"></img>
+</body>
+</html>

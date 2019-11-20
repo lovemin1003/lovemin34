@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="startgeolocation()">위치 정보 시작</button>
+<button onclick="stopgeolocation()">위치 정보 중지</button>
+<div id="target"></div>
+<script>
+var id;
+var mydiv = document.getElementById("target");
+function startgeolocation()
+{
+if(navigator.geolocation)
+	{
+	id = navigator.geolocation.watchPosition(showgeolocation);
+	}
+}
+function showgeolocation(location)
+{
+	mydiv.innerHTML = "(위도: "+ location.coords.latitude+", 경도:" +location.coords.longitude + " )";
+}
+function stopgeolocation()
+{
+if(navigator.geolocation)
+	{
+	navigator.geolocation.clearWatch(id);
+	}
+}
+</script>
+
+</body>
+</html>

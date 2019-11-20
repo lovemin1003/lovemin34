@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="getgeolocation()">위치 정보 얻기</button>
+<div id="target"></div>
+<script>
+var mydiv= document.getElementById("target");
+function getgeolocation()
+{
+if(navigator.geolocation)
+	{
+	navigator.geolocation.getCurrentPosition(showLocation);
+	navigator.geolocation.getCurrentPosition(showgeolocation);
+	}
+}
+function showLocation(location)
+{
+mydiv.innerHTML = "(위도: "+ location.coords.latitude+", 경도:" +location.coords.longitude + " )"
+}
+function showgeolocation(position)
+{
+var pos= position.coords.latitude+","+position.coords.longitude;
+var url="http://maps/google.com/maps/api/staticmap?center="
+		+pos+"&zoom=14&size=500X300&sensor=false";
+window.open(url);		
+}
+</script>
+
+</body>
+</html>
