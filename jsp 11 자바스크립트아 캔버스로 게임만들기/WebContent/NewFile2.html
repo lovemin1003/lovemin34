@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body
+{
+  margin: 0px;
+  padding: 0px;
+}
+</style>
+</head>
+<body>
+<canvas id="Mycanvas" width= "5000" height="5000"></canvas>
+<canvas id="Mycanvas1" width= "5000" height="500"></canvas>
+<canvas id="Mycanvas2" width= "5000" height="5000"></canvas>
+<canvas id="Mycanvas3" width= "5000" height="5000"></canvas>
+<canvas id="Mycanvas4" width= "5000" height="5000"></canvas>
+<script>
+
+var canvas = document.getElementById('Mycanvas');
+var context = canvas.getContext('2d');
+
+var gradient = context.createRadialGradient(70,50,10, 80,90,100);
+gradient.addColorStop(0,"black");
+gradient.addColorStop(1,"orange");
+
+context.fillStyle= gradient;
+context.fillRect(10,10,250,170);
+
+var canvas1 = document.getElementById('Mycanvas1');
+var context1 = canvas.getContext('2d');
+
+var gradient1 = context1.createLinearGradient(0,0,200,0);
+gradient1.addColorStop(0,"white");
+gradient1.addColorStop(0.5,"blue");
+gradient1.addColorStop(1,"orange");
+
+context1.fillStyle= gradient1;
+context1.fillRect(10,190,320,90);
+
+var canvas2 = document.getElementById('Mycanvas2');
+var context2 = canvas.getContext('2d');
+
+var image= new Image();
+image.src ="55775340_p0_master1200.jpg";
+image.onload=
+	function(){ var pattern= context2.createPattern(image, "repeat");
+	context2.rect(1500,0,canvas.width,canvas.height);
+	context2.fillStyle= pattern;
+	context2.fill();};
+
+var canvas3 = document.getElementById('Mycanvas3');
+var context3 = canvas.getContext('2d');
+var image1= new Image();
+image1.src="62033650_p0_master1200.jpg";
+image1.onload= function(){context3.drawImage(image1,0,400);};
+
+var canvas4 = document.getElementById('Mycanvas4');
+var context4 = canvas.getContext('2d');
+
+context4.fillStyle= "brown";
+context4.fillRect(0,700,750,750);
+
+
+context4.translate(50,50);
+context4.fillStyle= "black";
+context4.scale(0.5,0.5);
+
+</script>
+</body>
+</html>

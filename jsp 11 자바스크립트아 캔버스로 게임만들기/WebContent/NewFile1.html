@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body
+{
+  margin: 0px;
+  padding: 0px;
+}
+</style>
+</head>
+<body>
+<canvas id="Mycanvas" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas1" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas2" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas3" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas4" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas5" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas6" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas7" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas8" width= "3100" height="2100"></canvas>
+<canvas id="Mycanvas9" width= "3100" height="2100"></canvas>
+<script>
+var canvas = document.getElementById('Mycanvas');
+var context = canvas.getContext('2d');
+
+context.beginPath();
+context.moveTo(0,0);
+context.lineTo(10,30);
+context.lineTo(20,90);
+context.stroke();
+
+var canvas1 = document.getElementById('Mycanvas1');
+var context1 = canvas.getContext('2d');
+
+
+
+context1.beginPath();
+context1.rect(100,100,300,300);
+context1.fillStyle="cyan";
+context1.fill();
+
+var canvas2 = document.getElementById('Mycanvas2');
+var context2 = canvas.getContext('2d');
+
+context2.beginPath();
+context2.arc(400,400,180,0,2.0*Math.PI, false);
+context2.strokeStyle="violet";
+context2.stroke();
+
+context2.beginPath();
+context2.arc(400,400,150,0,1.5*Math.PI, false);
+context2.closePath();
+context2.strokeStyle="red";
+context2.stroke();
+
+context2.beginPath();
+context2.arc(400,400,120,0,1.5*Math.PI, false);
+context2.strokeStyle="green";
+context2.stroke();
+
+var canvas3 = document.getElementById('Mycanvas3');
+var context3 = canvas.getContext('2d');
+
+context3.beginPath();
+context3.moveTo(200,200);
+context3.bezierCurveTo(150,10,155,10,200,120);
+context3.lineWidth=10;
+context3.strokeStyle= "gray";
+context3.stroke();
+
+var canvas4 = document.getElementById('Mycanvas4');
+var context4 = canvas.getContext('2d');
+
+context4.beginPath();
+context4.moveTo(250,450);
+context4.lineTo(200,400);
+context4.lineTo(250,400);
+context4.closePath();
+context4.fillStyle="black";
+context4.fill();
+
+var canvas5 = document.getElementById('Mycanvas5');
+var context5 = canvas.getContext('2d');
+
+context5.font='italic 40pt Arial';
+context5.fillText('너의 이름은?', 215, 215);
+
+var canvas6 = document.getElementById('Mycanvas6');
+var context6 = canvas.getContext('2d');
+
+context6.font='italic 40pt Arial';
+context6.strokeText('너의 이름은?', 415, 145);
+
+var canvas7 = document.getElementById('Mycanvas7');
+var context7 = canvas.getContext('2d');
+
+context7.beginPath();
+context7.lineWidth = 15;
+context7.lineCap ="round";
+context7.moveTo(30,30);
+context7.lineTo(100,30);
+context7.strokeStyle="yellow";
+context7.stroke();
+
+
+
+</script>
+</body>
+</html>

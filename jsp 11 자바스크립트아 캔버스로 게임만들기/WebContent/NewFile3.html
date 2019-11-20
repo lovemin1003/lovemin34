@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="Mycanvas" width= "5000" height="5000"></canvas>
+<script>
+var canvas = document.getElementById('Mycanvas');
+var context = canvas.getContext('2d');
+
+context.fillStyle= "brown";
+context.fillRect(0,0,100,100);
+
+
+context.translate(50,50);
+context.fillStyle= "black";
+//context.scale(0.5,0.5);
+//context.rotate(Math.PI/4);
+context.transform(1,0,0,1,50,50);
+context.fillRect(0,0,100,100);
+
+
+</script>
+
+</body>
+</html>

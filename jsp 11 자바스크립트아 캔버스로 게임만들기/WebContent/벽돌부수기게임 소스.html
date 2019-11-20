@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>벽돌부수기 게임</title>
+<style>
+canvas
+{
+background: pink;
+border: 1px dotted black;
+}
+</style>
+<script>
+var context;
+var dx=5;
+var dy=5;
+var y=100;
+var x=100;
+var q=700;//가로길이
+var w=800;//세로길이
+
+function draw()
+{
+var canvas=document.getElementById('mycanvas');
+var context=canvas.getContext('2d');
+context.clearRect(0,0,q,w);
+context.beginPath();
+context.fillStyle="black";
+context.arc(x,y,20,0,Math.PI*2,true);//공을 그린다.
+context.fill();
+if(x<(0+20)|| x> (q-20))
+	dx=-dx;
+if(y<(0+20)|| y> (w-20))
+	dy=-dy;	
+	
+	x+= dx;
+	y+= dy;
+	
+}
+setInterval(draw,10);
+</script>
+</head>
+<body>
+<canvas id="mycanvas" width="700" height="800"></canvas>
+</body>
+</html>
