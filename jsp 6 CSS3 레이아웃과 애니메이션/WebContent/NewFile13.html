@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>튀는 공</title>
+<style>
+
+@-webkit-keyframes bounce
+{
+from,to
+ {
+bottom: 0px;
+-webkit-animation-timing-function: ease-out;
+ }
+50%
+ {
+bottom: 900px;
+-webkit-animation-timing-function: ease-in;
+ }
+ 
+
+}
+#ball
+{
+position: absolute;
+width: 20px;
+height: 20px;
+background: red;
+border-radius: 15px;
+-webkit-animation-name:bounce;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 3s;
+}
+
+</style>
+</head>
+<body>
+<div id="ball"> </div>
+</body>
+</html>

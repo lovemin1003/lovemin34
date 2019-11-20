@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.menubar li
+{
+display: inline;
+background-color: yellow;
+border: 1px solid;
+border-color: green;
+margin:0;
+padding:0.5em;
+}
+
+#one
+{
+position: absolute;
+top: 100px;
+left: 110px;
+background-color: cyan;
+width: 200px;
+height: 50px;
+}
+#two
+{
+position: static;
+background-color: yellow;
+width: 200px;
+height: 50px;
+}
+#three
+{
+position: relative;
+left: 120px;
+background-color: red;
+width: 200px;
+height: 50px;
+}
+#four
+{
+position: fixed;
+background-color: gray;
+top: 110px;
+right: 90px;
+}
+</style>
+</head>
+<body>
+<ul class="menubar">
+<li><a href="#">홈으로</a></li>
+<li><a href="#">회사 소개</a></li>
+<li><a href="#">제품 소개</a></li>
+<li><a href="#">질문과 대답</a></li>
+<li><a href="#">전화번호</a></li>
+
+<p id="one">1번째</p>
+<div id="two">2번째<br> gg</div>
+<p id="three">3번째</p>
+<p id="four">4번째 !!!</p>
+
+</ul>
+
+</body>
+</html>

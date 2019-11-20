@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div
+{
+width:100px;
+height:120px;
+border: 1px solid black;
+background: yellow;
+transition: width 3s;
+-webkit-transition: width 3s,-webkit-transform 5s;
+}
+div:hover
+{
+width:350px;
+transform: rotate(180deg);
+-webkit-transition:rotate(180deg);
+}
+</style>
+</head>
+<body>
+<div>마우스를 올려보시길.</div>
+</body>
+</html>
