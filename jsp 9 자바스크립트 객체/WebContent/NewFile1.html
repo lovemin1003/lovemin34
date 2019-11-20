@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<script>
+function point(x,y)
+{
+	this.x=x;
+	this.y=y;
+	
+	}
+	
+	point.prototype.getDistance = function()
+	{
+		return Math.sqrt(this.x*this.y+this.y*this.x);
+		
+	}
+	
+	var p1 = new point(10,20);
+	var d1 = p1.getDistance();
+	var p2 = new point(10,30);
+	var d2 = p2.getDistance();
+	document.write(d1+"<br>");
+	document.write(d2+"<br>");
+	var today = new Date();
+	document.write(today+"<br>");
+	
+</script>
+
+</body>
+</html>

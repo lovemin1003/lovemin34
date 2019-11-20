@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function deck(name, type, win)
+{
+	this.name= name;
+	this.type=type;
+	this.win=win;
+	this.won= function()
+	{
+		
+		this.win++;
+	}
+ this.lose= function()
+ {
+	 this.win--;
+ }
+ 
+}
+	
+	bermuda= new deck("bermuda", "force", 3);
+	
+	document.write(bermuda.name,",", bermuda.type,",",bermuda.win+"승<br>");
+	bermuda.won();
+	document.write(bermuda.name,",", bermuda.type,",",bermuda.win+"승<br>");
+	bermuda.lose();
+	document.write(bermuda.name,",", bermuda.type,",",bermuda.win+"승<br>");
+</script>
+</body>
+</html>

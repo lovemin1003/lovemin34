@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var answer=69;
+	function test1()
+	{
+		
+		try
+		{
+			var x = document.getElementById("number").value;
+			if (x=="") {throw "입력 없네..."};
+			if(isNaN(x)) {throw "숫자로 입력해라!"};
+			if(x>answer) {throw "넘 크다."};
+			if(x<answer) {throw "넘 작다."};
+			if(x==answer) throw "정답!";
+			
+		}
+		catch(error){
+		var y =document.getElementById("msg");
+		y.innerHTML ="힌트:" + error;
+	}
+	}
+</script>
+<input type="text" id="number">
+<button type ="button"  onclick="test1()">추측</button>
+<p id="msg"></p>
+</body>
+</html>

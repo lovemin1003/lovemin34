@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+function calc(q)
+{
+	x=Number(document.calculater.number1.value);
+	if (q==1)
+		y=Math.sin((x*Math.PI)/180.0);
+	else if (q==2)
+		y=Math.log(x);
+	else if (q==3)
+		y=Math.sqrt(x);
+	else if(q==4)
+		y=Math.abs(x);
+	document.calculater.total.value=y;
+			
+	}
+</script>
+</head>
+<body>
+<form name="calculater">
+입력:<input type="text" name="number1"> <br>
+결과:<input type="text" name="total"><br>
+<input type="button" value="sin" onclick="calc(1);">
+<input type="button" value="log" onclick="calc(2);">
+<input type="button" value="sqrt" onclick="calc(3);">
+<input type="button" value="abs" onclick="calc(4);">
+
+
+</form>
+</body>
+</html>

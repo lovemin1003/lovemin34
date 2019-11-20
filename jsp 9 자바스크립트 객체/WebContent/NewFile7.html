@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var s = "macaron";
+var d = new String("sabre");
+document.write(s.big()+"<br>");
+document.write(s.small()+"<br>");
+document.write(s.bold()+"<br>");
+document.write(s.italics()+"<br>");
+document.write(s.fixed()+"<br>");
+document.write(s.strike()+"<br>");
+document.write(s.fontcolor("violet")+"<br>");
+document.write(s.fontsize(5)+"<br>");
+document.write(s.sub()+"<br>");
+document.write(s.sup()+"<br>");
+document.write(s.link("https://www.youtube.com/watch?v=9XddHUblkOM")+"<br>");
+document.write(typeof(s));
+document.write(typeof(d));
+
+var myarray=[1,23,67,262,84,366,775]
+myarray.sort();
+document.write(myarray+"<br>");
+myarray.sort(function (a,b){return a-b});
+document.writeln(myarray);
+var item = myarray.shift();
+document.writeln(item);
+var newarray1=myarray.slice(3);
+document.writeln(newarray1);
+var q = myarray.join('+');
+document.writeln(q)
+
+var numbers=[1,2,3,4,5];
+function ibe(element, index, array)
+{
+	return (index>=3);
+	}
+	var filtered = numbers.filter(ibe);
+	document.write("필터링된 배열:"+filtered);
+</script>
+</body>
+</html>
