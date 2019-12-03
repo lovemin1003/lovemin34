@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{# q : Question객체 1개 c : q와 연결된 Choice객체리스트 #}
+<h2>{{q.title}}</h2>
+<!-- 하나의 뷰 함수에서 get요청과 post요청을 구분하기 위해서 post방식으로 입력값 전달 -->
+<form action='' method='post'>
+ {% csrf_token %} <!-- csrf 공격을 방지하기 위한 웹서버가 발급하는 일회용 키 -->
+ {% for ch in c %}
+ <input type ='radio' name='a' value='{{ch.id}}'>
+ <label>{{ch.name}}</label>
+ <a href="{% url 'vote:cupdate' ch.id %}">수정</a>
+ <a href="{% url 'vote:cdelete' ch.id %}">삭제</a>
+ <br>
+ {% endfor %}
+  <input type ='submit' value='투표하기'>
+</form>
+{% endblock %}
