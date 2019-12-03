@@ -1,0 +1,112 @@
+@charset "EUC-KR";
+*,
+*::after,
+*::before {
+  box-sizing: ;
+  font-family: ;
+}
+<!--
+body {
+  background: linear-gradient(to right, hsl(37, 81%, 61%), hsl(71, 80%, 67%));
+  display: ;
+  justify-content: ;
+  align-items: ;
+  min-height: ;
+  overflow: ;
+}
+-->
+.시계 {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(145, 236, 137, 0.7);
+  border-radius: 50%;
+  position: relative;
+}
+
+.시계 .숫자 {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: whitesmoke; 확인용*/
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+.시계 .숫자1 {
+  --rotation: 30deg;
+}
+.시계 .숫자2 {
+  --rotation: 60deg;
+}
+.시계 .숫자3 {
+  --rotation: 90deg;
+}
+.시계 .숫자4 {
+  --rotation: 120deg;
+}
+.시계 .숫자5 {
+  --rotation: 150deg;
+}
+.시계 .숫자6 {
+  --rotation: 180deg;
+}
+.시계 .숫자7 {
+  --rotation: 210deg;
+}
+.시계 .숫자8 {
+  --rotation: 240deg;
+}
+.시계 .숫자9 {
+  --rotation: 270deg;
+}
+.시계 .숫자10 {
+  --rotation: 300deg;
+}
+.시계 .숫자11 {
+  --rotation: 330deg;
+}
+
+.시계 .표시 {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  border: 1px solid whitesmoke;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.시계::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.시계 .표시.초침 {
+  width: 2px;
+  height: 40%;
+  background-color: whitesmoke;
+}
+.시계 .표시.분침 {
+  width: 7px;
+  height: 35%;
+  background-color: whitesmoke;
+}
+.시계 .표시.시침 {
+  width: 10px;
+  height: 28%;
+  background-color: whitesmoke;
+}

@@ -1,0 +1,286 @@
+@charset "UTF-8";
+*
+{
+	padding:0px;
+	margin:0px;
+}
+body
+{
+	background-color: cyan;
+}
+
+
+
+nav ul li a
+{
+	text-decoration:none;
+	color: black;
+}
+nav ul li a:hover
+{
+	text-decoration: underline;
+}
+
+aside#left
+{
+	width:175px;
+	margin-top:20px;
+	float:left;
+}
+
+aside#center
+{
+	width:175px;
+	margin-top:20px;
+	float:center;
+}
+aside#right
+{
+	margin-top: 00px;
+	width:100px;
+	float:right;
+}
+#left h4
+{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 20px; 
+}
+#left ul
+{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 15px; 
+    color:violet;
+    list-style:none;
+    text-indent:15px; 
+}
+#left ul li
+{
+	background:#3f3f3f;
+	line-height: 28px;
+	border-bottom: 1px solid #333;
+	
+}
+#left ul li a
+{
+	text-decoration: none;
+	color: #f0f0f0;
+	display: block;
+	
+}
+
+
+#left ul li a:hover 
+{
+	background: #d40203;
+	line-height: 37px;
+}
+
+#left ul li a:focus 
+{
+	
+	line-height: 37px;
+}
+
+#left ul li a#baguette:hover 
+{
+	background: #d40203;
+}
+
+#left ul li a#baguette:focus
+{
+	background: #d40203;
+	
+}
+
+
+#left ul li a#plainbread:hover 
+{
+	background: #2FF00F;
+}
+
+#left ul li a#plainbread:focus
+{
+	background: #2FF00F;
+	
+}
+
+#left ul li a#cake:hover 
+{
+	background: white;
+	color: black;
+}
+
+#left ul li a#cake:focus
+{
+	background: white;
+	color: black;
+	
+}
+
+#left ul li a#melonbread:hover 
+{
+	background: yellowgreen;
+}
+
+#left ul li a#melonbread:focus
+{
+	background: yellowgreen;
+}
+
+#left ul li a#coronebread:hover 
+{
+	background: #FF8C80;
+}
+
+#left ul li a#coronebread:focus 
+{
+	background: #FF8C80;
+}
+
+#left ul li a#beanbread:hover 
+{
+	background: orange;
+}
+
+#left ul li a#beanbread:focus 
+{
+	background: orange;
+}
+
+#left ul li a#muffin:hover 
+{
+	background: #259A0A;
+}
+
+#left ul li a#muffin:focus 
+{
+	background: #259A0A;
+}
+
+#left ul li a#koroke:hover 
+{
+	background: yellow;
+	color: black;
+}
+
+#left ul li a#koroke:focus
+{
+	background: yellow;
+	color: black;
+}
+
+
+#left ul li a#prancebread:hover 
+{
+	background: blue;
+}
+
+#left ul li a#prancebread:focus
+{
+	background: blue;
+}
+
+#left ul li a#sandwich:hover 
+{
+	background: #7F00FF;
+}
+
+#left ul li a#sandwich:focus 
+{
+	background: #7F00FF;
+}
+
+#left ul li a#choucream:hover 
+{
+	background: #EEEE82;
+	color: black;
+}
+
+#left ul li a#choucream:focus
+{
+	background: #EEEE82;
+	color: black;
+}
+
+#left ul li a#tart:hover 
+{
+	background: cyan;
+	color: black;
+}
+
+#left ul li a#tart:focus 
+{
+	background: cyan;
+	color: black;
+}
+
+#left ul li a#makaron:hover 
+{
+	background: pink;
+}
+
+#left ul li a#makaron:focus
+{
+	background: pink;
+}
+
+#left ul li a#dacquoise:hover 
+{
+	background: #A52A0A;
+}
+
+#left ul li a#dacquoise:focus 
+{
+	background: #A52A0A;
+}
+
+#left ul li a#chocochip:hover 
+{
+	background: #800000;
+}
+
+#left ul li a#chocochip:focus
+{
+	background: #800000;
+}
+
+#left ul li a#sabre:hover 
+{
+	background: #905020;
+}
+
+#left ul li a#sabre:focus 
+{
+	background: #905020;
+}
+
+#left ul li a#gingerbread:hover 
+{
+	background: #809040;
+}
+
+#left ul li a#gingerbread:focus 
+{
+	background: #809040;
+}
+
+#left ul li#active
+{
+	background: #80A080;
+}
+
+
+#shopcart
+{
+	margin-bottom: 20px;
+}
+#login
+{
+	margin-top:40px;
+}
+footer
+{
+width:100%;
+height:50px;
+clear:both;	
+}
