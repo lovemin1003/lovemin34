@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{# list : Post 모델 클래스 객체 리스트 #}
+{% block content %}
+<!-- 다음 페이지, 이전 페이지 링크
+ListView가 넘겨주는 추가 변수
+page_obj: 페이지 정보를 전달하는 변수
+
+ -->
+{% if page_obj.has_previous %}
+<!--  href 속성에 URL주소를 기입 안 하면 현재 페이지 주소로 재요청함. ListView는 page 변수에 값을 보고 클라이언트에 몇 번째
+페이지를 보여줄지 결정함 
+page_obj.previous_page_number: 현재 페이지 기준 이전 페이지 번호가 저장된 변수
+ 
+-->
+ <a href ="?page={{page_obj.previous_page_number}}">이전 페이지</a>
+{% endif %}
+
+{% if page_obj.has_next %}
+<a href ="?page={{page_obj.next_page_number}}">다음 페이지</a>
+{% endif %}
+
+<table width ="90%">
+<tr>
+<th>글번호</th>
+<th>카테고리</th>
+<th>제목</th>
+<th>글쓴이</th>
+<th>작성일</th>
+</tr>
+{% for p in list%}
+<tr>
+<th>{{p.id}}</th>
+<th>{{p.category}}</th>
+<th> <a href = "{% url 'blog:detail' p.id %}">
+{{p.headline}}</a>
+</th>
+<th>{{p.author}}</th>
+<th>{{p.pub_date}}</th> 
+</tr>
+{% endfor %}
+</table>
+<a href = "{% url 'blog:posting' %}">글쓰기</a>
+
+{% endblock %}
