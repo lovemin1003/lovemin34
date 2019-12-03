@@ -1,0 +1,63 @@
+
+
+
+会員のデータベース
+create table user1(count NUMBER NOT NULL,
+userid varchar(30), userpassword varchar(30), username varchar(30) NOT NULL unique, usergender varchar(30), useremail varchar(60)
+ NOT NULL,
+primary key(userid));
+
+
+商品購買のデータベース
+create table shoppingresult
+(shopid number,shoppingdate varchar(300),userid varchar(30) not null, username varchar(30) NOT NULL, usergender varchar(30) NOT NULL, useremail varchar(60) NOT NULL,
+customname varchar(30) not null, customaddress1 varchar(90) not null, customaddress2 varchar(90) not null,
+ tel1 number not null, tel2 number not null, tel3 number not null, hope varchar(300),
+  normalplain number,nutplain number,chocoplain number,milkplain number,cornplain number,
+ chococake number,creamcake number,berrycake number,cheesecake number,sweetpotatocake number,
+ creamplus number,creamless number,
+ chococorone number,pumpkincorone number,berrycorone number,
+ beanbread number,
+ chocomuffin number,planemuffin number,honeymuffin number,
+  potatokoroke number, currykoroke number, vegekoroke number,
+croissant number, chococroissant number, almondcroissant number,
+vegesandwich number, chickensandwich number, beefsandwich number, hamsandwich number, eggsandwich number,
+ choucream number,
+ cheesetart number, eggtart number, walnuttart number,
+planemakaron number, chocomakaron number, berrymakaron number, cheesemakaron number, greenmakaron number,
+ dacquoise number,
+  chocochip number,
+  sabre number, chocosabre number,
+gingerbread number,
+totalprice number
+);
+
+一般掲示板のデータベース
+create table bbs
+(bbsid number, bbstitle varchar(60) not null,userid varchar(30), bbsdate varchar(300) DEFAULT SYSDATE,
+bbscontent varchar(3000) not null, 
+bbsavailable number,hit NUMBER DEFAULT 0,username varchar(30), filename varchar(600),filename2 varchar(600) 
+,filename3 varchar(600),filename4 varchar(600),filename5 varchar(600),primary key (bbsid));
+
+購買後期掲示板のデータベース
+create table shoppingbbs
+(bbsid number, bbstitle varchar(60) not null,userid varchar(30), bbsdate varchar(300) DEFAULT SYSDATE,
+bbscontent varchar(3000) not null, 
+bbsavailable number,hit NUMBER DEFAULT 0,username varchar(30), filename varchar(600),filename2 varchar(600) 
+,filename3 varchar(600),filename4 varchar(600),filename5 varchar(600),primary key (bbsid));
+
+
+
+一般コメントのデータベース
+create table bbs1
+(bbsid number, userid varchar(30), bbsdate varchar(60), bbscontent1 varchar(3000) not null, 
+bbsavailable number,username varchar(30),commentid number,commenthit number, filename varchar(4000));
+drop table bbs1;
+
+購買後期掲示板のデータベース
+SELECT TO_CHAR(SYSDATE, 'RRRR-MM-DD hh24:mi:ss') FROM DUAL;
+create table shoppingbbs1
+(bbsid number, userid varchar(30), bbsdate varchar(60), bbscontent1 varchar(3000) not null, 
+bbsavailable number,username varchar(30),commentid number,commenthit number, filename varchar(4000));
+drop table shoppingbbs1;
+
