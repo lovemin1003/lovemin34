@@ -346,7 +346,7 @@ for(int i=0; i < list.size(); i++)
 	chocosabre += list2.get(q).getChocosabre();
 	gingerbread += list2.get(q).getGingerbread();
 	
-	totalprice += list2.get(q).getTotalprice()/10;
+	totalprice += list2.get(q).getTotalprice();
  %>	
 	
 <%} %>	

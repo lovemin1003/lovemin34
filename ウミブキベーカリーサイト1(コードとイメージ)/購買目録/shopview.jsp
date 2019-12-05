@@ -737,13 +737,9 @@ if(list2.get(list3).getGingerbread()>=1)
 </td>
 </tr>
 <tr >
-<%
 
-int total=list2.get(list3).getTotalprice()/10;
-
-%>
 <td>合計購買額</td>
-<td conspan="2"><%= total%>円</td>
+<td conspan="2"><%= list2.get(list3).getTotalprice()%>円</td>
 </tr>
 <tr>
 <td>希望事項</td>

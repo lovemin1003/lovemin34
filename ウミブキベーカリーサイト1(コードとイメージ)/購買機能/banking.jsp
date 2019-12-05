@@ -31,7 +31,7 @@ text-decoration:none;
 
 body
 {
- background-image: url("소라빵리미.jpg");
+ background-image: url("우리와 멍파치.jpg");
  background-attachment: fixed;
  background-size: 50%;
  
@@ -110,7 +110,7 @@ aria-haspopup="true" aria-expanded="false">会員管理<span class="caret"></spa
 ２２７－２４１－１３４２５１　<br>
 　海武器真綾に　<%=shop1.getTotalprice() %>円を　入金してください。
 </div>
-<input onclick="return confirm('本当に　脱退しますか？')"   type="button" class="btn btn-promary form-control" value="確認">
+<a href="main.jsp"  type="button" class="btn btn-promary form-control" value="確認">確認</a>
 
 </div>
 </div>
